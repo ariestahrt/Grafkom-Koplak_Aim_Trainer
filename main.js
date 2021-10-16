@@ -79,10 +79,10 @@ function animate () {
 
 
     let lightBarProps = {
-        DirectionalLight: true,
+        DirectionalLight: false,
         HemisphereLight:false,
         AmbientLight:false,
-        PointLight:false,
+        PointLight:true,
         Spotlights:false,
     }
 
@@ -98,71 +98,11 @@ function animate () {
     } );
 
     function setLight(type, active){
-        if(type == 'HemisphereLight'){
-            if(active){
-                light_objects.HemisphereLight.members.forEach((light) => {
-                    scene.add(light);
-                });
-            }else{
-                light_objects.HemisphereLight.members.forEach((light) => {
-                    scene.remove(light);
-                });
-                light_objects.HemisphereLight.active = false;
-            }
-        }
-
-        if(type == 'DirectionalLight'){
-            if(active){
-                light_objects.DirectionalLight.members.forEach((light) => {
-                    scene.add(light);
-                });
-            }else{
-                light_objects.DirectionalLight.members.forEach((light) => {
-                    scene.remove(light);
-                });
-                light_objects.DirectionalLight.active = false;
-            }
-        }
-
-        if(type == 'AmbientLight'){
-            if(active){
-                light_objects.AmbientLight.members.forEach((light) => {
-                    scene.add(light);
-                });    
-            }else{
-                light_objects.AmbientLight.members.forEach((light) => {
-                    scene.remove(light);
-                });
-                light_objects.AmbientLight.active = false;
-            }
-        }
-
-        if(type == 'PointLight'){
-            if(active){
-                light_objects.PointLight.members.forEach((light) => {
-                    scene.add(light);
-                });    
-            }else{
-                light_objects.PointLight.members.forEach((light) => {
-                    scene.remove(light);
-                });
-                light_objects.PointLight.active = false;
-            }
-        }
-
-        if(type == 'Spotlights'){
-            if(active){
-                light_objects.Spotlights.members.forEach((light) => {
-                    scene.add(light);
-                    // scene.add(light.target);
-                });    
-            }else{
-                light_objects.Spotlights.members.forEach((light) => {
-                    scene.remove(light);
-                });
-                light_objects.Spotlights.active = false;
-            }
-
+        if(active) {
+            light_objects[type].members.forEach(light => scene.add(light));
+        } else {
+            light_objects[type].members.forEach(light => scene.remove(light));
+            light_objects[type].active = false;
         }
     }
 
@@ -211,10 +151,10 @@ function animate () {
             return light;
         }
 
-        light_objects.PointLight.members.push(PointLightFactory(0xfcba03, 1, [-25,50,25]));
-        light_objects.PointLight.members.push(PointLightFactory(0xc300ff, 1, [25,50,25]));
+        light_objects.PointLight.members.push(PointLightFactory(0xffffff, 1, [-25,50,25]));
+        light_objects.PointLight.members.push(PointLightFactory(0xffffff, 1, [25,50,25]));
         light_objects.PointLight.members.push(PointLightFactory(0xffffff, 1, [-25,50,-25]));
-        light_objects.PointLight.members.push(PointLightFactory(0xfcba03, 1, [25,50,-25]));
+        light_objects.PointLight.members.push(PointLightFactory(0xffffff, 1, [25,50,-25]));
 
         light_objects.PointLight.members.push(PointLightFactory(generateRandomColor(), 1, [-30,0,30]));
         light_objects.PointLight.members.push(PointLightFactory(generateRandomColor(), 1, [30,0,30]));
@@ -234,7 +174,7 @@ function animate () {
         light_objects.Spotlights.members.push(SpotLightFactory(generateRandomColor(), 1, [25,50,25], [0,0,0]));
     }
 
-    setLight('DirectionalLight', true);
+    setLight('PointLight', true);
     
     const axesHelper = new THREE.AxesHelper( 40 );
     scene.add( axesHelper );
@@ -254,7 +194,7 @@ function animate () {
     }
 
     function addBall(){
-        let color = 0xFF0000;
+        let color = 0xff2222;
 
         let new_position = null;
         
