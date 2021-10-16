@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOPLAK AIM TRAINER by KELOMPOK 8</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body style="margin: 0;">
+    <canvas id="canvas" style="width: 100vw; height: 100vh; display: block;" ></canvas>
+    <div id="crosshair" style="display: none;">
+        <p>+</p>
+    </div>
+    <div id="score-container" style="display: none;">
+        <h3 class="glowing-text" style="margin: 2rem 0 0;">
+            KOPLAK AIM TRAINER
+        </h3>
+        <h3 id="score" style="margin: 0;">
+            
+        </h3>
+    </div>
+    <div id="time-container" style="display: none;">
+        <h3 class="glowing-text" style="margin: 0 1rem 0 0;">
+            TIME LEFT:
+        </h3>
+        <h3 id="time" style="margin: 0;">
+            
+        </h3>
+    </div>
+    <div id="highscore-container">
+        <h3 class="glowing-text" style="margin: 0 1rem 0 0;">
+            HIGHSCORE:
+        </h3>
+        <h3 id="highscore" style="margin: 0;">
+            
+        </h3>
+    </div>
+    <div id="mainmenu">
+        <div class="menu-container" style="display: flex; flex-direction: column; justify-content: center;">
+            <h3 class="glowing-text" style="margin: 0; line-height: 4rem;">
+                KOPLAK AIM TRAINER<BR/>
+                AIMLAB KETAR KETIR!
+            </h3>
+            <button class="button" >START</button>
+        </div>
+    </div>
+    <div id="cred-container">
+        <p id="cred" style="margin: 0; font-size: 16px;">
+            Made with 🔥 by kelompok 8
+        </p>
+    </div>
+    <div data-video="-BmT8XcseqY" style="display: none;" data-autoplay="1" data-loop="1" id="youtube-audio">
+    </div>
+
+    <!-- <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script> -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>
