@@ -42,7 +42,7 @@
                 KOPLAK AIM TRAINER<BR/>
                 AIMLAB KETAR KETIR!
             </h3>
-            <button class="button" >START</button>
+            <button id="start-button" class="button" >START</button>
         </div>
     </div>
     <div id="cred-container">
@@ -53,8 +53,15 @@
     <div data-video="-BmT8XcseqY" style="display: none;" data-autoplay="1" data-loop="1" id="youtube-audio">
     </div>
 
-    <!-- <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script> -->
+    <script>
+        document.onload = () => {
+            if(localStorage.getItem("highscore") != undefined || localStorage.getItem("highscore") != null) {
+                document.querySelector('#highscore').innerHTML = localStorage.getItem("highscore");
+            } else {
+                localStorage.setItem("highscore", 0);
+            };
+        }
+    </script>
     <script type="module" src="main.js"></script>
 </body>
 </html>

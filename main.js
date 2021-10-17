@@ -364,7 +364,7 @@ function animate () {
 
 let currentRunningProgram = null;
 
-document.querySelector('#mainmenu').addEventListener('click', (event) => {
+document.querySelector('#start-button').addEventListener('click', (event) => {
     document.querySelector('#mainmenu').style.display = 'none';
     document.querySelector('#crosshair').style.display = 'flex';
     document.querySelector('#score-container').style.display = 'flex';
@@ -373,6 +373,7 @@ document.querySelector('#mainmenu').addEventListener('click', (event) => {
     GAME_STATE = "PLAY";
     START_TIME = new Date();
     document.querySelector('#highscore').innerHTML = HIGH_SCORE;
+    localStorage.setItem("highscore", HIGH_SCORE);
     currentRunningProgram = animate();
 })
 
