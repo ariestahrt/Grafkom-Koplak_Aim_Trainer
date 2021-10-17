@@ -340,6 +340,8 @@ function animate () {
             scene.clear();
             THIS_ACTIVE = false;
             // Game Ended, Then Show Score
+            localStorage.setItem("highscore", HIGH_SCORE);
+            document.querySelector('#highscore').innerHTML = localStorage.getItem("highscore");
             return;
         }
 
@@ -372,8 +374,7 @@ document.querySelector('#start-button').addEventListener('click', (event) => {
     document.body.requestPointerLock();
     GAME_STATE = "PLAY";
     START_TIME = new Date();
-    document.querySelector('#highscore').innerHTML = HIGH_SCORE;
-    localStorage.setItem("highscore", HIGH_SCORE);
+    document.querySelector('#score').innerHTML = 0;
     currentRunningProgram = animate();
 })
 

@@ -38,10 +38,12 @@
     </div>
     <div id="mainmenu">
         <div class="menu-container" style="display: flex; flex-direction: column; justify-content: center;">
-            <h3 class="glowing-text" style="margin: 0; line-height: 4rem;">
-                KOPLAK AIM TRAINER<BR/>
-                AIMLAB KETAR KETIR!
+            <h3 class="glowing-text" style="margin: 0; line-height: 3rem; text-align: center;">
+                KOPLAK AIM TRAINER
             </h3>
+            <h4 class="glowing-text" style="margin: 0; line-height: 3rem; text-align: center;   ">
+                AIMLAB KETAR KETIR
+            </h4>
             <button id="start-button" class="button" >START</button>
         </div>
     </div>
@@ -54,13 +56,12 @@
     </div>
 
     <script>
-        document.onload = () => {
-            if(localStorage.getItem("highscore") != undefined || localStorage.getItem("highscore") != null) {
-                document.querySelector('#highscore').innerHTML = localStorage.getItem("highscore");
-            } else {
-                localStorage.setItem("highscore", 0);
-            };
-        }
+        // console.log(localStorage.getItem("highscore"));
+        if(localStorage.getItem("highscore") != undefined && localStorage.getItem("highscore") != null) {
+            document.querySelector('#highscore').innerHTML = localStorage.getItem("highscore");
+        } else {
+            localStorage.setItem("highscore", 0);
+        };
     </script>
     <script type="module" src="main.js"></script>
 </body>
