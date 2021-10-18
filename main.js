@@ -1,7 +1,7 @@
 import * as THREE from './three.module.js';
 
 let GAME_STATE = "IDLE";
-let MAX_TIME = 5;
+let MAX_TIME = prompt("MAX_TIME (s)");
 let START_TIME = null;
 let HIGH_SCORE = localStorage.getItem("highscore") ? localStorage.getItem("highscore") : 0;
 
