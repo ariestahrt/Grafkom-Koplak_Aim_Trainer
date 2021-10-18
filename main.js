@@ -3,7 +3,7 @@ import * as THREE from './three.module.js';
 let GAME_STATE = "IDLE";
 let MAX_TIME = 5;
 let START_TIME = null;
-let HIGH_SCORE = 0;
+let HIGH_SCORE = localStorage.getItem("highscore") ? localStorage.getItem("highscore") : 0;
 
 function animate () {
     let THIS_ACTIVE = true;
